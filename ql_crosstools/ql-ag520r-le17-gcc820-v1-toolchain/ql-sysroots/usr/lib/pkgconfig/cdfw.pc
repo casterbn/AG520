@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: cdfw
+Description: QTI correction data framework
+Version: @VERSION
+Libs: -L${libdir} -lcdfw
+Cflags: -I${includedir}/cdfw

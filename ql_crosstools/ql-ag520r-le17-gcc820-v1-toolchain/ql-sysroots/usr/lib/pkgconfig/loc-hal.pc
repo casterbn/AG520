@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: loc-hal
+Description: QTI GPS Loc HAL
+Version: @VERSION
+Libs: -L${libdir} -lgnss
+Cflags: -I${includedir} -I${includedir}/utils -I${includedir}/core -I${includedir}/loc-hal

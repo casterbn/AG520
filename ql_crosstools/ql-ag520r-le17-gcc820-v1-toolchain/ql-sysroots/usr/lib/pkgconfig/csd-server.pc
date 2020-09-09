@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: csd-server
+Description: csd-server service
+Version: 1.0.0
+Libs: -L${libdir} -lcsd-server
+Cflags: -I${includedir}/csd-server

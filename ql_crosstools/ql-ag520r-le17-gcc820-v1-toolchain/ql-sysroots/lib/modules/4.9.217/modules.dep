@@ -1,0 +1,55 @@
+kernel/crypto/echainiv.ko:
+kernel/crypto/hmac.ko:
+kernel/crypto/drbg.ko:
+kernel/crypto/jitterentropy_rng.ko:
+kernel/drivers/char/hw_random/virtio-rng.ko:
+kernel/drivers/mtd/tests/mtd_oobtest.ko:
+kernel/drivers/mtd/tests/mtd_pagetest.ko:
+kernel/drivers/mtd/tests/mtd_readtest.ko:
+kernel/drivers/mtd/tests/mtd_speedtest.ko:
+kernel/drivers/mtd/tests/mtd_stresstest.ko:
+kernel/drivers/mtd/tests/mtd_subpagetest.ko:
+kernel/drivers/mtd/tests/mtd_torturetest.ko:
+kernel/drivers/mtd/tests/mtd_nandecctest.ko:
+kernel/drivers/mtd/tests/mtd_nandbiterrs.ko:
+kernel/drivers/spi/spidev.ko:
+kernel/drivers/net/virtio_net.ko:
+kernel/drivers/input/misc/gpio_event.ko:
+kernel/drivers/input/misc/gpio_matrix.ko:
+kernel/drivers/input/misc/gpio_input.ko:
+kernel/drivers/input/misc/gpio_output.ko:
+kernel/drivers/input/misc/gpio_axis.ko:
+kernel/drivers/input/evdev.ko:
+kernel/drivers/mmc/card/mmc_test.ko:
+kernel/drivers/quectel-drivers/ql_pwm/ql_pwm.ko:
+kernel/net/netfilter/xt_physdev.ko:
+kernel/net/bridge/br_netfilter.ko:
+extra/mbhc_dlkm.ko: extra/wcd_core_dlkm.ko
+extra/q6_notifier_dlkm.ko:
+extra/pinctrl_wcd_dlkm.ko:
+extra/platform_dlkm.ko: extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko
+extra/swr_ctrl_dlkm.ko: extra/swr_dlkm.ko
+extra/shortcut-fe-cm.ko: extra/shortcut-fe-ipv6.ko extra/shortcut-fe.ko
+extra/stub_dlkm.ko:
+kernel/drivers/net/nf_conntrack_rtsp.ko:
+kernel/drivers/qca-ssdk-nohnat/qca-ssdk.ko:
+extra/bluetooth-power.ko:
+extra/emac_dwc_eqos.ko:
+extra/shortcut-fe.ko:
+extra/q6_dlkm.ko: extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko
+extra/wcd934x_dlkm.ko: extra/swr_ctrl_dlkm.ko extra/mbhc_dlkm.ko extra/wcd9xxx_dlkm.ko extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko extra/wcd_core_dlkm.ko extra/swr_dlkm.ko
+extra/shortcut-fe-ipv6.ko:
+extra/apr_dlkm.ko: extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko
+extra/snd_event_dlkm.ko:
+extra/machine_dlkm.ko: extra/wcd934x_dlkm.ko extra/swr_ctrl_dlkm.ko extra/mbhc_dlkm.ko extra/wcd9xxx_dlkm.ko extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko extra/wsa881x_dlkm.ko extra/wcd_core_dlkm.ko extra/swr_dlkm.ko
+extra/swr_dlkm.ko:
+extra/qca6574.ko:
+extra/native_dlkm.ko: extra/platform_dlkm.ko extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko
+extra/adsp_loader_dlkm.ko: extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko
+extra/msm_sdw_dlkm.ko: extra/swr_ctrl_dlkm.ko extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko extra/wcd_core_dlkm.ko extra/swr_dlkm.ko
+kernel/drivers/net/tcp_splice.ko:
+extra/wcd9xxx_dlkm.ko: extra/q6_dlkm.ko extra/apr_dlkm.ko extra/q6_notifier_dlkm.ko extra/snd_event_dlkm.ko extra/wcd_core_dlkm.ko
+kernel/drivers/net/nf_nat_rtsp.ko: kernel/drivers/net/nf_conntrack_rtsp.ko
+extra/wcd_core_dlkm.ko:
+extra/gsb.ko:
+extra/wsa881x_dlkm.ko: extra/wcd_core_dlkm.ko extra/swr_dlkm.ko

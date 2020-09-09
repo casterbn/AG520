@@ -1,0 +1,20 @@
+# Copyright (c) 2020 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=Qwesd Service
+SourcePath=/etc/initscripts/qwesd
+After=qseecomd.service qwes_license_store.service
+Wants=qseecomd.service
+
+[Service]
+SupplementaryGroups=radio system
+Restart=always
+RemainAfterExit=yes
+ExecStart=/etc/initscripts/qwesd start
+ExecStop=/etc/initscripts/qwesd stop
+
+[Install]
+WantedBy=local-fs.target

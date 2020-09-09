@@ -1,0 +1,9 @@
+Name: libtelux_tel
+Version: 1.33.3
+Description: Automotive telux framework for telephony features like Phone, SMS and CardServices
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -ltelux_tel

@@ -1,0 +1,20 @@
+# Copyright (c) 2020 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=Qwes License Store Service
+SourcePath=/etc/initscripts/qwes_license_store
+After=qseecomd.service persist.mount data.mount
+Before=qwesd.service
+Wants=qseecomd.service persist.mount data.mount
+
+[Service]
+Restart=no
+RemainAfterExit=yes
+ExecStart=/etc/initscripts/qwes_license_store
+ExecStop=
+
+[Install]
+WantedBy=local-fs.target

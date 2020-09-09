@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/data/usb/
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc/data/usb
+ConditionPathIsReadWrite=/systemrw/data
+ConditionPathExists=/etc/data/usb/
+ConditionPathIsReadWrite=!/etc/data/usb/
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/data/usb /etc/data/usb/
+ExecStop=/sbin/umount-copybind /etc/data/usb/
+
+[Install]
+WantedBy=basic.target

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Location Diag Interface
+Description: QTI GPS engine plugin
+Version: @VERSION
+Libs: -L${libdir} -llocdiagiface
+Cflags: -I${includedir}/loc-diag-iface

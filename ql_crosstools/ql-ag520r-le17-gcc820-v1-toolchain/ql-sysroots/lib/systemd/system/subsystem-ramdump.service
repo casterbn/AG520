@@ -1,0 +1,15 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=subsystem-ramdump service
+
+[Service]
+Restart=always
+ExecStartPre=/bin/sh -c 'echo 1 > /sys/module/subsystem_restart/parameters/enable_ramdumps'
+ExecStart=/usr/bin/subsystem_ramdump 2 1 1 
+
+[Install]
+WantedBy=multi-user.target

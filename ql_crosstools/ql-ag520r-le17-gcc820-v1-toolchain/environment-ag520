@@ -1,0 +1,19 @@
+export PATH=/opt/ql_crosstools/ql-ag520r-le17-gcc820-v1-toolchain/gcc/usr/bin/arm-oe-linux-gnueabi/:$PATH
+export SDKTARGETSYSROOT=/opt/ql_crosstools/ql-ag520r-le17-gcc820-v1-toolchain/ql-sysroots/
+
+export CC=arm-oe-linux-gnueabi-gcc
+export CXX=arm-oe-linux-gnueabi-g++
+export CPP=arm-oe-linux-gnueabi-gcc
+export AS=arm-oe-linux-gnueabi-as
+export LD=arm-oe-linux-gnueabi-ld
+export STRIP=arm-oe-linux-gnueabi-strip
+export RANLIB=arm-oe-linux-gnueabi-ranlib
+export OBJCOPY=arm-oe-linux-gnueabi-objcopy
+export OBJDUMP=arm-oe-linux-gnueabi-objdump
+export AR=arm-oe-linux-gnueabi-ar
+export NM=arm-oe-linux-gnueabi-nm
+
+export ARCH=arm
+
+export CFLAGS="-march=armv7-a -marm -mfpu=neon -mfloat-abi=hard --sysroot=$SDKTARGETSYSROOT"
+

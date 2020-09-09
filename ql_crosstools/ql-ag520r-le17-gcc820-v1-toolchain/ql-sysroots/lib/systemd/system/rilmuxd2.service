@@ -1,0 +1,22 @@
+# Copyright (c) 2020 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+[Unit]
+Description=Rilmuxd2 Daemon
+Requires=rild2.service
+After=rild2.service
+SourcePath=/etc/initscripts/rilmuxd_launcher.sh
+
+[Service]
+User=system
+Group=system
+Type=forking
+EnvironmentFile=/etc/tel.conf
+ExecStart=/etc/initscripts/rilmuxd_launcher.sh
+Restart=always
+CapabilityBoundingSet= CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

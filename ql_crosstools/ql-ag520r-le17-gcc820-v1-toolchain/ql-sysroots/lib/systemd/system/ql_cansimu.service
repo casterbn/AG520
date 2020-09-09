@@ -1,0 +1,12 @@
+[Unit]
+Description= Quectel QDR Can Simulator
+SourcePath=/usr/bin/ql_cansimu
+
+[Service]
+User=root
+Group=root
+Restart=no
+ExecStart=/usr/bin/ql_cansimu
+
+[Install]
+WantedBy=multi-user.target

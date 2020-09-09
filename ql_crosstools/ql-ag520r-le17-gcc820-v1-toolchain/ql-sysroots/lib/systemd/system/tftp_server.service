@@ -1,0 +1,25 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description= Staring tftp server
+DefaultDependencies=no
+#After=qrtr_ns.service persist.mount data.mount label-data.service
+After=persist.mount data.mount label-data.service
+#Requires=init_sys_mss.service
+SourcePath=/sbin/tftp_server
+
+[Service]
+User=root
+Group=root
+Restart=on-failure
+ExecStart=/sbin/tftp_server
+
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SETPCAP CAP_CHOWN
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID CAP_SETPCAP CAP_CHOWN
+
+[Install]
+WantedBy=sysinit.target
+

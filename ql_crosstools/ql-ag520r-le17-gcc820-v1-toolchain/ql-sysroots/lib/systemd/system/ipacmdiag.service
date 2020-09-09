@@ -1,0 +1,15 @@
+[Unit]
+SourcePath=/usr/bin/ipacmdiag
+Description= IPACM DIAG Service
+Wants=diag-reboot-app.service chgrp-diag.service dev-diag.device
+After=diag-reboot-app.service chgrp-diag.service dev-diag.device
+
+[Service]
+Restart=no
+ExecStart=/usr/bin/ipacmdiag
+User=radio
+Group=radio
+SupplementaryGroups=diag inet
+
+[Install]
+WantedBy=multi-user.target

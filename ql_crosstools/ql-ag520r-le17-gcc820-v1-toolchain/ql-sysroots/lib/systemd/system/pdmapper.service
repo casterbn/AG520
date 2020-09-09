@@ -1,0 +1,21 @@
+# Copyright (c) 2018 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+
+[Unit]
+Description=pdmapper Service
+SourcePath=/usr/bin/pdmappersvc
+After=firmware.mount init_sys_mss.service
+
+[Service]
+User=system
+Group=system
+Restart=on-failure
+ExecStart=/usr/bin/pdmappersvc
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+

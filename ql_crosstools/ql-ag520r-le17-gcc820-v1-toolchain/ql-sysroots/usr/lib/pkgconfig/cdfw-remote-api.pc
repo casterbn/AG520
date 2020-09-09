@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: cdfw-remote-api
+Description: QTI correction data framework remote API
+Version: @VERSION
+Libs: -L${libdir} -lcdfwremoteapi
+Cflags: -I${includedir}/cdfw-remote-api

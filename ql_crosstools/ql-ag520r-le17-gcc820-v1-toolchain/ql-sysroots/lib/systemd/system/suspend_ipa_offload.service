@@ -1,0 +1,12 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=Service to write into suspend_ipa_offload
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=+/bin/sh -c 'echo 1 > /sys/kernel/debug/eth/suspend_ipa_offload'

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: location-hal-daemon
+Description: location hal daemon service
+Version: 1.0.0
+Libs: -L${libdir} -llocation-hal-daemon
+Cflags: -I${includedir} -I${includedir}/location-hal-daemon

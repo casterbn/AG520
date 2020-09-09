@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: engine-simulator
+Description: QTI GPS engine simulator
+Version: @VERSION
+Libs: -L${libdir} -lengine-simulator
+Cflags: -I${includedir}/engine-plugin

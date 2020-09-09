@@ -1,0 +1,20 @@
+[Unit]
+SourcePath=/usr/bin/ipacm
+Description= IPACM Service
+Before= QCMAP_ConnectionManagerd.service
+After= start_stop_ipa_fws.service local-fs.target systemd-tmpfiles-setup.service
+DefaultDependencies=no
+
+[Service]
+Restart=no
+ExecStartPre=udevadm trigger --settle --subsystem-match=wwan_ioctl --subsystem-match=ipa --subsystem-match=ipaNatTable --action=add
+ExecStartPre=+chmod 660 /dev/wwan_ioctl /dev/ipa /dev/ipaNatTable
+ExecStartPre=+chown -h radio.radio /dev/wwan_ioctl /dev/ipa /dev/ipaNatTable
+ExecStart=/usr/bin/ipacm
+User=radio
+Group=radio
+SupplementaryGroups=diag inet
+AmbientCapabilities=CAP_NET_ADMIN
+
+[Install]
+WantedBy=local-fs.target

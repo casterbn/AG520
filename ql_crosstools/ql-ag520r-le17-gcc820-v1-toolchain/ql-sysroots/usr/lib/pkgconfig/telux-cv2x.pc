@@ -1,0 +1,9 @@
+Name: libtelux_cv2x
+Version: 1.33.3
+Description: This library contains implementation of Cv2x Radio APIs
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -ltelux_cv2x

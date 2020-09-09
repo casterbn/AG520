@@ -1,0 +1,18 @@
+[Unit]
+SourcePath=/usr/bin/qti_ppp
+Description= qti_ppp service
+Requires= qtid.service
+
+[Service]
+# Don't change to other than NO as daemon exits after reading config
+User=radio
+Group=radio
+Restart=no
+ExecStart=/usr/bin/qti_ppp
+
+SupplementaryGroups=diag inet net_admin system wifi netdev net_raw kmsg
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/data/iproute2/rt_tables
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc/data/iproute2
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/data/iproute2/rt_tables
+ConditionPathIsReadWrite=!/etc/data/iproute2/rt_tables
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/rt_tables /etc/data/iproute2/rt_tables
+ExecStop=/sbin/umount-copybind /etc/data/iproute2/rt_tables
+
+[Install]
+WantedBy=basic.target

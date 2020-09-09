@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ql-lib-ipc
+Description: Quectel Common API package
+Version: 1.0.0
+Libs: -L${libdir} -lql_lib_ipc
+Cflags: -I${includedir}/ql_lib_ipc

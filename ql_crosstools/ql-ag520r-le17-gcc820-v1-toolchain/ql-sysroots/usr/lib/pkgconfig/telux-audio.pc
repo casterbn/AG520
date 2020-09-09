@@ -1,0 +1,9 @@
+Name: libtelux_audio
+Version: 1.33.3
+Description: Automotive telux framework for audio services
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -ltelux_audio

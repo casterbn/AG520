@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/bluetooth/
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc/bluetooth
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/bluetooth/
+ConditionPathIsReadWrite=!/etc/bluetooth/
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/bluetooth /etc/bluetooth/
+ExecStop=/sbin/umount-copybind /etc/bluetooth/
+
+[Install]
+WantedBy=basic.target

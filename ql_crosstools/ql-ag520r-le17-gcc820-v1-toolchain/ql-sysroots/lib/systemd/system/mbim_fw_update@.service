@@ -1,0 +1,8 @@
+[Unit]
+Description= mbimd fw update helper service
+
+[Service]
+Environment="SCRIPT_ARGS=%I"
+ExecStart=/etc/initscripts/mbim_fw_script.sh $SCRIPT_ARGS
+Type=oneshot
+RemainAfterExit=no

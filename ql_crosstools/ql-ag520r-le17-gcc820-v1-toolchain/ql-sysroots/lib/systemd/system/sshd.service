@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenSSH server daemon
+After=network.target sshdgenkeys.service
+Wants=sshdgenkeys.service
+
+[Service]
+EnvironmentFile=-/etc/default/ssh
+ExecStart=/usr/sbin/sshd
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

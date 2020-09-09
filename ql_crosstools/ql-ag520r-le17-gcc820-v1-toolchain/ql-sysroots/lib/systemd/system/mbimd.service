@@ -1,0 +1,14 @@
+[Unit]
+SourcePath=/usr/bin/mbimd
+Description=QTI Mobile Broadband Service
+After=mount-data.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/mbimd
+User=radio
+Group=radio
+SupplementaryGroups=diag system kmsg wakelock
+
+[Install]
+WantedBy=multi-user.target

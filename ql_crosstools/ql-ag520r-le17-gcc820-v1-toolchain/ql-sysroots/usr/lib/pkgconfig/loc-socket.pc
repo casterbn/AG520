@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: loc-socket
+Description: location socket library
+Version: 1.0.0
+Libs: -L${libdir} -lloc_socket
+Cflags: -I${includedir} -I${includedir}/loc-socket

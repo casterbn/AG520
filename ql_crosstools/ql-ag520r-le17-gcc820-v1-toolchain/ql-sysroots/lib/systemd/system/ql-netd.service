@@ -1,0 +1,16 @@
+[Unit]
+Description= QUECTEL NET Services
+SourcePath=/usr/bin/ql_netd
+After=init_sys_mss.service netmgrd.service 
+Requires=netmgrd.service init_sys_mss.service
+
+[Service]
+User=root
+Group=root
+Restart=no
+ExecStart=/usr/bin/ql_netd
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+

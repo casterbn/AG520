@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: NTRIP client playback
+Description: QTI NTRIP Client
+Version: @VERSION
+Libs: -L${libdir} -lntripclientplayback
+Cflags: -I${includedir}/ntrip-client-playback

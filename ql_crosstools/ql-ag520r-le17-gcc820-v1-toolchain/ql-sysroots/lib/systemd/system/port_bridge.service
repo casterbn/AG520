@@ -1,0 +1,16 @@
+[Unit]
+Description=Port bridge Service
+SourcePath=/etc/initscripts/start_port_bridge
+
+[Service]
+Type=forking
+User=radio
+Group=radio
+
+Restart=no
+RemainAfterExit=yes
+ExecStart=/etc/initscripts/start_port_bridge start
+ExecStop=/etc/initscripts/start_port_bridge stop
+
+[Install]
+WantedBy=multi-user.target

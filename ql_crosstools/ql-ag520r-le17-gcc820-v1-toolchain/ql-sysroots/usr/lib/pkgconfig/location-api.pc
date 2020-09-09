@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: location-api
+Description: Location API
+Version: @VERSION
+Libs: -L${libdir} -llocation_api
+Cflags: -I${includedir}/location-api

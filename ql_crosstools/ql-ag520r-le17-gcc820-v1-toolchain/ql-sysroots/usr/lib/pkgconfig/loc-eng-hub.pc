@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: loc_eng_hub
+Description: QTI GPS Engine hub
+Version: @VERSION
+Libs: -L${libdir} -lloc_eng_hub
+Cflags: -I${includedir}/loc-eng-hub -I${includedir}/loc-eng-hub/inc

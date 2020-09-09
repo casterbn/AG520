@@ -1,0 +1,17 @@
+[Unit]
+SourcePath=/usr/bin/diagrebootapp
+Description= diagrebootapp service
+Wants=chgrp-diag.service
+
+[Service]
+User=diag
+Group=diag
+Restart=always
+ExecStartPre=-/usr/bin/find -L /sys/bus/coresight/devices -maxdepth 2 -type f -exec chown diag:root {} +
+ExecStartPre=-/usr/bin/find -L /sys/bus/coresight/devices -maxdepth 2 -type f -exec chmod 0644 {} +
+ExecStart=/usr/bin/diagrebootapp
+PermissionsStartOnly=true
+SupplementaryGroups=sdcard rebooters
+
+[Install]
+WantedBy=multi-user.target

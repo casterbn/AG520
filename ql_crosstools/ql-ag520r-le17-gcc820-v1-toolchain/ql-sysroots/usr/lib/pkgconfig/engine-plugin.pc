@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: engine plugin
+Description: QTI GPS engine plugin
+Version: @VERSION
+Libs: -L${libdir} -lengineplugin
+Cflags: -I${includedir}/engine-plugin

@@ -1,0 +1,9 @@
+Name: telux
+Version: 1.33.3
+Description: Telematics SDK libraries
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -ltelux_common -ltelux_tel -ltelux_loc -ltelux_data -ltelux_therm -ltelux_power

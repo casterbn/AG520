@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ql-canwrapper
+Description: Quectel QDR CanWrapper 
+Version: 1.0.0
+Libs: -L${libdir} -lql_canwrapper
+Cflags: -I${includedir}/ql-canwrapper

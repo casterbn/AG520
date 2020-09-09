@@ -1,0 +1,24 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=powermanager-daemon Service
+SourcePath=/usr/bin/power_manager_daemon
+After=misc_daemon.service evdev_load.service
+
+[Service]
+User=powermgr
+Group=powermgr
+SupplementaryGroups=plugdev wakelock
+Type=forking
+Restart=on-failure
+ExecStartPre=+/bin/sh /usr/bin/configure_gpio.sh
+ExecStart=/usr/bin/power_manager_daemon
+ExecStartPost=chmod 0660 /dev/socket/power_manager_daemon/pwrstate_socket
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_BLOCK_SUSPEND
+AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_BLOCK_SUSPEND
+
+[Install]
+WantedBy=multi-user.target

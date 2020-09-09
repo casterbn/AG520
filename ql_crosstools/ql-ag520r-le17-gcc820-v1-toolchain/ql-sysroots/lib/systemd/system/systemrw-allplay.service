@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/allplay/
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc/allplay
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/allplay/
+ConditionPathIsReadWrite=!/etc/allplay/
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/allplay /etc/allplay/
+ExecStop=/sbin/umount-copybind /etc/allplay/
+
+[Install]
+WantedBy=basic.target

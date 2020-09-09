@@ -1,0 +1,11 @@
+[Unit]
+Description=System Logging Service
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/etc/initscripts/syslog start
+ExecStop=/etc/initscripts/syslog stop
+
+[Install]
+WantedBy=multi-user.target

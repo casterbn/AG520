@@ -1,0 +1,16 @@
+[Unit]
+Description= MCM RIL Services
+SourcePath=/usr/bin/mcm_ril_service
+Requires=postmss.service
+After=postmss.service
+
+[Service]
+User=root
+Group=root
+Restart=no
+ExecStartPre=/etc/initscripts/mcm_core_preload.sh
+ExecStart=mcm_ril_service
+
+[Install]
+WantedBy=multi-user.target
+

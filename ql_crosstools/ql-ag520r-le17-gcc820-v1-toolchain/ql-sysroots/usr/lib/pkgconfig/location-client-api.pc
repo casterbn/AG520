@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: location-client-api
+Description: location client api library
+Version: 1.0.0
+Libs: -L${libdir} -llocation_client_api
+Cflags: -I${includedir} -I${includedir}/location-client-api

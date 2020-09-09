@@ -1,0 +1,9 @@
+Name: libv2x_radio
+Version: 1.1.0
+Description: This library contains implementation of legacy C Cv2x Radio APIs
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -lv2x_radio

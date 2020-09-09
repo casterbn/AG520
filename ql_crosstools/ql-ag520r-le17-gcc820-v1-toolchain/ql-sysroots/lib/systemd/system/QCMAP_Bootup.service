@@ -1,0 +1,13 @@
+[Unit]
+SourcePath=/usr/bin/QCMAP_Bootup
+Description= QCMAP_Bootup service
+After=systemrw.mount
+DefaultDependencies=no
+
+[Service]
+ExecStart=/usr/bin/QCMAP_Bootup
+SupplementaryGroups=radio
+Nice=-20
+
+[Install]
+WantedBy=local-fs.target

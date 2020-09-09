@@ -1,0 +1,20 @@
+# Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+[Unit]
+Description=Rilmuxd Daemon
+Requires=rild.service
+After=rild.service
+
+[Service]
+User=system
+Group=system
+Type=simple
+ExecStart=/usr/bin/rilmuxd
+Restart=always
+CapabilityBoundingSet= CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

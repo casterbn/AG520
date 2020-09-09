@@ -1,0 +1,13 @@
+[Unit]
+Description=Netmgrd Service
+SourcePath=/usr/bin/netmgrd
+After= irsc_util.service qrtr_ns.service
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/netmgrd
+Restart=always
+
+[Install]
+WantedBy=local-fs.target

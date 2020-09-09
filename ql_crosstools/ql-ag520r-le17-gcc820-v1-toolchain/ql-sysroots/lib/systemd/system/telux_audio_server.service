@@ -1,0 +1,19 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+[Unit]
+Description=Telux Audio Server
+SourcePath=/usr/bin/telux_audio_server
+
+[Service]
+User=audio
+Group=audio
+Type=simple
+ExecStart=/usr/bin/telux_audio_server
+Restart=on-failure
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

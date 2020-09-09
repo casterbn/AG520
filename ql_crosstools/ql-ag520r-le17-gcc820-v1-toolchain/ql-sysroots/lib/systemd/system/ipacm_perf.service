@@ -1,0 +1,13 @@
+[Unit]
+SourcePath=/usr/bin/ipacm_perf
+Description= IPACM Perf Service
+
+[Service]
+Restart=no
+ExecStart=/usr/bin/ipacm_perf
+User=radio
+Group=radio
+SupplementaryGroups=diag inet
+
+[Install]
+WantedBy=multi-user.target

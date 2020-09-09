@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: powermanager
+Description: powermanager
+Version: @VERSION
+Libs: -L${libdir} -lpowermanager
+Cflags: -I${includedir}/powermanager

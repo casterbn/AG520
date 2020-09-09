@@ -1,0 +1,22 @@
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+[Unit]
+Description=fs-scrub-daemon Service
+SourcePath=/sbin/fs-scrub-daemon
+
+[Service]
+User=system
+Group=system
+SupplementaryGroups=ubi
+Restart=on-failure
+RemainAfterExit=yes
+ExecStartPre=+/bin/sh /usr/bin/recoveryfs-mtd.sh
+ExecStart=/sbin/fs-scrub-daemon
+CapabilityBoundingSet=CAP_SYS_RESOURCE
+AmbientCapabilities=CAP_SYS_RESOURCE
+
+[Install]
+WantedBy=multi-user.target

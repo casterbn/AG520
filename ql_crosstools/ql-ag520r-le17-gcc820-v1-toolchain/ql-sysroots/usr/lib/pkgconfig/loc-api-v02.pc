@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: loc-api-v02
+Description: Loc Api V02
+Version: @VERSION
+Libs: -L${libdir} -lloc_api_v02
+Cflags: -I${includedir} -I${includedir}/loc-api-v02

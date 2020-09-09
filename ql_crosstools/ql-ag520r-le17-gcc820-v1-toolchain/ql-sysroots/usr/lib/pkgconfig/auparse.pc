@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/lib
+includedir=/usr/include
+
+Name: libauparse
+Description: Library for apps that want to parse and interpret audit events
+Version: 2.8.4
+Libs: -L${libdir} -lauparse
+Libs.private: -laudit
+Cflags: -I${includedir}

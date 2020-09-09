@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: location-qapi
+Description: location qapi library
+Version: 1.0.0
+Libs: -L${libdir} -llocation_qapi
+Cflags: -I${includedir} -I${includedir}/location-qapi

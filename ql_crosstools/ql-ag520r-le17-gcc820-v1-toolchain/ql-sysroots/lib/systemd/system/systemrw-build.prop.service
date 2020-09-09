@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/build.prop
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/build.prop
+ConditionPathIsReadWrite=!/etc/build.prop
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/build.prop /etc/build.prop
+ExecStop=/sbin/umount-copybind /etc/build.prop
+
+[Install]
+WantedBy=basic.target

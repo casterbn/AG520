@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: qmi-framework-vendor
+Description: QMI Framework Tools
+Version: 1.0.0
+Libs: -L${libdir} -lqrtr -lqsocket
+Cflags: -I${includedir}/qmi-framework-vendor

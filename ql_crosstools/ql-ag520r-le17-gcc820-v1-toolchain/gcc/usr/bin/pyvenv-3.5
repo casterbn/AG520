@@ -1,0 +1,11 @@
+#!/opt/ql_crosstools/ql-ag520r-le17-gcc820-v1-toolchain/gcc/usr/bin/python3.5
+if __name__ == '__main__':
+    import sys
+    rc = 1
+    try:
+        import venv
+        venv.main()
+        rc = 0
+    except Exception as e:
+        print('Error: %s' % e, file=sys.stderr)
+    sys.exit(rc)

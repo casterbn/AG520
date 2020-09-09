@@ -1,0 +1,9 @@
+Name: libtelux_data
+Version: 1.33.3
+Description: This library contains APIs for data connection and profile management services
+
+prefix=/usr
+includedir=include
+libdir=lib
+Cflags:-I${includedir} -I${includedir}/telux
+Libs: -L${libdir} -ltelux_data

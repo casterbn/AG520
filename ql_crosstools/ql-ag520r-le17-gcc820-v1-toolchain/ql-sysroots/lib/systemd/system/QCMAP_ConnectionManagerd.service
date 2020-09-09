@@ -1,0 +1,27 @@
+[Unit]
+SourcePath=/usr/bin/QCMAP_ConnectionManager
+Description= QCMAP connectionManager service
+After=systemrw.mount systemd-tmpfiles-setup.service dbus.service
+Before=sockets.target
+#Modem loading is done after QCMAP. Respective change is added in init_sys_mss service file
+Requires=systemrw.mount dbus.socket
+DefaultDependencies=no
+
+[Service]
+User=radio
+Group=radio
+SecureBits=keep-caps
+Restart=no
+ExecStart=/usr/bin/QCMAP_ConnectionManager /etc/data/mobileap_cfg.xml d
+#Sleep is added for fast binary loading and QCMAP init complete
+ExecStartPost=+usleep 1000000
+#diag is needed for QXDM logs
+#net_raw for iptables
+#inet and net_admin for network related commands
+SupplementaryGroups=diag inet net_admin system wifi netdev net_raw kmsg
+
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SETUID CAP_SETGID
+
+[Install]
+WantedBy=sockets.target

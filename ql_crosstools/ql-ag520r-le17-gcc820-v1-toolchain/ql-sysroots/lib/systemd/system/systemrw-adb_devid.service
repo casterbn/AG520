@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/adb_devid
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/adb_devid
+ConditionPathIsReadWrite=!/etc/adb_devid
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/adb_devid /etc/adb_devid
+ExecStop=/sbin/umount-copybind /etc/adb_devid
+
+[Install]
+WantedBy=basic.target

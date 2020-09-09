@@ -1,0 +1,20 @@
+[Unit]
+Description=Bind mount volatile /etc/usb/boot_hsusb_comp
+DefaultDependencies=no
+After=systemrw.mount sockets.target
+Before=basic.target
+RequiresMountsFor=/etc/usb
+ConditionPathIsReadWrite=/systemrw
+ConditionPathExists=/etc/usb/boot_hsusb_comp
+ConditionPathIsReadWrite=!/etc/usb/boot_hsusb_comp
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+StandardOutput=syslog
+TimeoutSec=0
+ExecStart=/sbin/mount-copybind /systemrw/boot_hsusb_comp /etc/usb/boot_hsusb_comp
+ExecStop=/sbin/umount-copybind /etc/usb/boot_hsusb_comp
+
+[Install]
+WantedBy=basic.target

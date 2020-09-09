@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: location proto file module
+Description: QTI location proto file
+Version: @VERSION
+Libs: -L${libdir} -leng_hub_msg_proto
+Cflags: -I${includedir}/eng-hub-msg-proto

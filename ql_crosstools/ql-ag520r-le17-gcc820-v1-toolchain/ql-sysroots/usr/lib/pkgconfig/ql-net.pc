@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ql-net 
+Description: ql-net packages
+Version: 1.0.0
+Libs: -L${libdir}
+Cflags: -I${includedir}/ql-net

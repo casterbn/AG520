@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ql-sdk
+Description: Quectel SDK 
+Version: 1.1.0
+Libs: -L${libdir} -lql_sdk
+Cflags: -I${includedir}/ql-sdk
